@@ -15,8 +15,17 @@ def create_file_from_url(url, file_path):
         raise Exception(f"Failed to fetch {url}")
 
 def main():
+    current_script_path = Path(__file__).resolve()
+    new_script_name = "updatecon2.py"
+    new_script_path = current_script_path.parent / new_script_name
+
+    # Rename the current script to "updatecon2.py"
+    print(f"Renaming the script to {new_script_name}...")
+    os.rename(current_script_path, new_script_path)
+    print(f"Script renamed to {new_script_name}.")
+
     print("Creating guftemp folder...")
-    guftemp_path = Path(__file__).resolve().parent / "guftemp"
+    guftemp_path = current_script_path.parent / "guftemp"
     os.makedirs(guftemp_path, exist_ok=True)
     print("Created guftemp folder.")
 
@@ -41,9 +50,9 @@ def main():
     print("All files created in guftemp.")
 
     print("Deleting old files...")
-    current_directory = Path(__file__).resolve().parent
+    current_directory = current_script_path.parent
     for fileordirectory in current_directory.iterdir():
-        if fileordirectory.name != "updatecon.py" and fileordirectory.name != "guftemp":
+        if fileordirectory.name not in {new_script_name, "guftemp"}:
             if fileordirectory.is_dir():
                 shutil.rmtree(fileordirectory)
             else:
@@ -62,9 +71,8 @@ def main():
     time.sleep(2)
     os.system('cls')
     print("Completed updates!")
-
     print("Deleting self...")
-    os.remove(Path(__file__).resolve())
+    os.remove(new_script_path)
 
 if __name__ == "__main__":
     main()
