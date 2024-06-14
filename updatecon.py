@@ -19,7 +19,6 @@ def main():
     new_script_name = "updatecon2.py"
     new_script_path = current_script_path.parent / new_script_name
 
-    # Rename the current script to "updatecon2.py"
     print(f"Renaming the script to {new_script_name}...")
     os.rename(current_script_path, new_script_path)
     print(f"Script renamed to {new_script_name}.")
@@ -29,7 +28,6 @@ def main():
     os.makedirs(guftemp_path, exist_ok=True)
     print("Created guftemp folder.")
 
-    # URLs and their corresponding local file names
     files_to_create = [
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/CodeOn%20for%20windows.py", "CodeOn for windows.py"),
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/CodeOn%20for%20windows%20file%20runner.py", "CodeOn for windows file runner.py"),
@@ -38,7 +36,6 @@ def main():
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/LICENSE", "LICENSE")
     ]
 
-    # Create each file in guftemp
     for url, filename in files_to_create:
         try:
             create_file_from_url(url, guftemp_path / filename)
@@ -68,8 +65,6 @@ def main():
     shutil.rmtree(guftemp_path)
     print("Deleted guftemp folder.")
 
-    time.sleep(2)
-    os.system('cls')
     print("Completed updates!")
     print("Deleting self...")
     os.remove(new_script_path)
