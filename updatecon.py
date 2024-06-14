@@ -60,7 +60,8 @@ if codeonresponse.status_code == 200:
                                 fileordirectory.unlink()
                     print("Finished deleting old files.")
                     print("Putting guftemp folder's contents in parent directory...")
-                    filesanddirectories2 = Path(__file__).resolve().parent / "guftemp".iterdir()
+                    filesanddirectories3 = Path(__file__).resolve().parent / "guftemp"
+                    filesanddirectories2 = filesanddirectories3.iterdir()
                     for fileordirectory2 in filesanddirectories2:
                         shutil.move(fileordirectory, Path(__file__).resolve().parent / fileordirectory2.name)
                     print("Finished changing files locations.")
