@@ -5,3 +5,4 @@ You may also find help about commands in commands.txt
 Find commands about how to create a CodeOn file in commandsread.txt
 This project is being worked on currently.
 You may delete ctmOLD.py if you would like. It is kept for future references.
+Please, if you experience any python errors or errors in your files at all, report it in the issues.
