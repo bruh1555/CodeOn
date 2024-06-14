@@ -1,1 +1,18 @@
-
+- 'exit': exit the command line
+- 'help': display the shortened help message (doesn't include all commands)
+- 'help all': display all commands
+- 'clear': clear your environment you are running CodeOn in.
+- 'createfile': create a file with the content, if the file has no content, it will be set to the default
+- 'createfolder': create a folder
+- 'editfile': edit a file
+- 'reload': reload CodeOn
+- 'read': read a file made of CodeOn commands (not finished)
+- 'helpread': display help to write a file for the read command
+- 'print <contents>': print the string you wrote
+- 'math <+ - * /> <num1> <num2>': do a math problem
+- 'info': get info about CodeOn version 0.3.
+- 'os': please type in 'os' to get information about this command. (i'm too lazy to type it all in here lol)
+- 'user': get the current logged in user
+- 'ncon': open another CodeOn console
+- 'py': open a python console
+- 'vmcon': open a CodeOn console within the current one (testing purposes, but can be used for stopping errors from closing the console)
