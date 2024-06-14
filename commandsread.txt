@@ -1,0 +1,4 @@
+- 'exit': exit the file
+- 'clear': clear console
+- 'print <contents>': print the string you wrote
+- 'math <+ - * /> <num1> <num2>': do a math problem
