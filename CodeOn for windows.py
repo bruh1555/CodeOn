@@ -421,24 +421,6 @@ else:
                         script_path2 = os.path.abspath(__file__)
                         script_path = '"' + script_path2 + '"'
                         os.system(f'python3 {script_path}')
-                    elif program == "gnv":
-                        latest_version2 = gnv.gnv()
-                        latest_version2 = float(latest_version2)
-                        codeonversion = float(codeonversion)
-                        if not codeonversion == latest_version2:
-                            print("You do not have the latest version.")
-                            print(f'Version of current CodeOn: {codeonversion}')
-                            print(f'Latest CodeOn Version: {latest_version}')
-                            print("You must get the latest version or you cannot use CodeOn.")
-                            getlatestversion2 = input("Would you like to get the latest version? (y/n): ")
-                            if getlatestversion2 == "n":
-                                sys.exit()
-                            else:
-                                os.system('cls')
-                                print("Getting the latest version....")
-                                getlatestversionfunc()
-                        else:
-                            continue
                     elif program == "":
                         continue
                     else:
