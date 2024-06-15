@@ -3,6 +3,7 @@ import time
 import os
 import sys
 import ctypes
+import urllib
 import gnv as gnv
 from pathlib import Path
 
@@ -27,6 +28,19 @@ def getlatestversionfunc():
         sys.exit()
 
 print("Starting CodeOn.......")
+time.sleep(2)
+print("Checking your internet connection...")
+try:
+    url = "https://www.google.com"
+    urllib.urlopen(url)
+    tempstatus = "Connected"
+except:
+    tempstatus = "Not connected"
+if not tempstatus == "Connected":
+    print("Error: You are not connected to the internet. CodeOn requires an internet connection. Please try again later when you have one.")
+    sys.exit()
+else:
+    continue
 time.sleep(2)
 print("Checking for new versions...")
 latest_version = gnv.gnv()
