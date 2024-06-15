@@ -39,14 +39,8 @@ else:
         print("You do not have the latest version.")
         print(f'Version of current CodeOn: {codeonversion}')
         print(f'Latest CodeOn Version: {latest_version}')
-        print("You must get the latest version or you cannot use CodeOn.")
-        getlatestversion = input("Would you like to get the latest version? (y/n): ")
-        if getlatestversion == "n":
-            sys.exit()
-        else:
-            os.system('cls')
-            print("Getting the latest version....")
-            getlatestversionfunc()
+        print("Getting latest version...")
+        getlatestversionfunc()
     else:
         time.sleep(3)
         ctypes.windll.kernel32.SetConsoleTitleW('Command Prompt - CodeOn (python3 windows ver.)')
