@@ -33,6 +33,7 @@ def main():
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/updatecon.py", "updatecon.py"),
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/gnv.py", "gnv.py"),
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/LICENSE", "LICENSE")
+        ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/checkinternet.py", "checkinternet.py")
     ]
 
     for url, filename in files_to_create:
