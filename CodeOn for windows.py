@@ -278,6 +278,7 @@ else:
                         print("- 'ncon': open another CodeOn console")
                         print("- 'py': open a python console")
                         print("- 'vmcon': open a CodeOn console within the current one (testing purposes, but can be used for stopping errors from closing the console)")
+                        print("- 'rstcon': reset CodeOn (redownload using update service)")
                         continue
                     elif program == "clear":
                         os.system('cls')
@@ -421,6 +422,8 @@ else:
                         script_path2 = os.path.abspath(__file__)
                         script_path = '"' + script_path2 + '"'
                         os.system(f'python3 {script_path}')
+                    elif program == "rstcon":
+                        getlatestversionfunc()
                     elif program == "":
                         continue
                     else:
