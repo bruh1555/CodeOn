@@ -17,6 +17,11 @@ def getlatestversionfunc():
             break
     if target_script_path:
         os.system('python3 ' + target_script_path2)
+        print("Welcome back! We are reloading CodeOn to recieve the data retrieved from the updater.")
+        script_path2 = os.path.abspath(__file__)
+        script_path = '"' + script_path2 + '"'
+        os.system("python3 " + script_path)
+        sys.exit()
     else:
         print("ACTION REQUIRED: THE FILE 'updatecon.py' CANNOT BE FOUND. PLEASE REDOWNLOAD CODEON TO FIX THIS ISSUE.")
         sys.exit()
