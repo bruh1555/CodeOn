@@ -4,6 +4,7 @@ import os
 import sys
 import ctypes
 import requests
+import checkinternet
 import gnv as gnv
 from pathlib import Path
 
@@ -30,16 +31,10 @@ def getlatestversionfunc():
 print("Starting CodeOn.......")
 time.sleep(2)
 print("Checking your internet connection...")
-try:
-    requests.get("https://www.google.com")
-    tempstatus = "Connected"
-except:
-    tempstatus = "Not connected"
-if not tempstatus == "Connected":
+returncheck = checkinternet.check()
+if returncheck == "False":
     print("Error: You are not connected to the internet. CodeOn requires an internet connection. Please try again later when you have one.")
     sys.exit()
-else:
-    tempstatus = None
 time.sleep(2)
 print("Checking for new versions...")
 latest_version = gnv.gnv()
