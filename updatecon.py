@@ -3,7 +3,6 @@ from pathlib import Path
 import requests
 import shutil
 import sys
-import time
 
 def create_file_from_url(url, file_path):
     response = requests.get(url)
