@@ -3,8 +3,7 @@ import sys
 import requests
 def gnv():
     try:
-        url = "https://www.google.com"
-        urllib.urlopen(url)
+        requests.get("https://www.google.com")
         tempstatus = "Connected"
     except:
         tempstatus = "Not connected"
@@ -12,7 +11,7 @@ def gnv():
         print("Error: You are not connected to the internet. CodeOn requires an internet connection. Please try again later when you have one.")
         return 'Error: No Wifi Connection'
     else:
-        continue
+        tempstatus = None
     response = requests.get("https://raw.githubusercontent.com/bruh1555/CodeOn/main/latest_version.txt")
 
     if response.status_code == 200:
