@@ -175,6 +175,7 @@ else:
                         print("- 'user': get the current logged in user")
                         print("- 'ncon': open another CodeOn console")
                         print("- 'py': open a python console")
+                        print("- 'py <location>: open a python script")
                         print("- 'vmcon': open a CodeOn console within the current one (testing purposes, but can be used for stopping errors from closing the console)")
                         print("- 'rstcon': reset CodeOn (redownload using update service)")
                         continue
