@@ -309,6 +309,9 @@ else:
                         os.system('whoami')
                     elif program == "py":
                         os.system("python3")
+                    elif "py" in program:
+                        program2 = program[3:]
+                        os.system(f'python3 {program2}')
                     elif program == "ncon":
                         script_path2 = os.path.abspath(__file__)
                         script_path = '"' + script_path2 + '"'
