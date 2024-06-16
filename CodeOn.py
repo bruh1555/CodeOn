@@ -63,7 +63,7 @@ else:
         print("Welcome to the CodeOn command line! Type in the command 'help' for help.")
         time.sleep(1)
         clear_screen()
-        newcodeonversion = "0.3"
+        newcodeonversion = "0.4"
 
         def parse(program):
             tokens = program.split()
