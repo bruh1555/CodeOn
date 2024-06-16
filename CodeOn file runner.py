@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+from pathlib import Path
 
 variables = {
 }
@@ -14,10 +15,21 @@ time.sleep(0.5)
 os.system("cls")
 
 def exit():
-    script_path2 = "C:\\Users\\royce\\OneDrive\\Desktop\\codinghacking stuff\\CodeOn\\CodeOn for windows.py"
-    script_path = '"' + script_path2 + '"'
-    os.system('python3 ' + script_path)
-    sys.exit()
+    current_script = Path(__file__).resolve()
+    parent_dir = current_script.parent
+    target_script_path = None
+    
+    for root, dirs, files in os.walk(parent_dir):
+        if "CodeOn.py" in files:
+            target_script_path = Path(root) / "updatecon.py"
+            break
+    
+    if target_script_path:
+        os.system(f'python {target_script_path}')
+        sys.exit()
+    else:
+        print("ACTION REQUIRED: THE FILE 'CodeOn.py' CANNOT BE FOUND. PLEASE REDOWNLOAD CODEON TO FIX THIS ISSUE.")
+        sys.exit()
 
 
 def main():
