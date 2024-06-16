@@ -1,4 +1,4 @@
-codeonversion = "0.4"
+codeonversion = "0.5"
 import time
 import os
 import sys
@@ -63,7 +63,7 @@ else:
         print("Welcome to the CodeOn command line! Type in the command 'help' for help.")
         time.sleep(1)
         clear_screen()
-        newcodeonversion = "0.4"
+        newcodeonversion = "0.5"
 
         def parse(program):
             tokens = program.split()
