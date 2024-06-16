@@ -1,4 +1,4 @@
-codeonversion = "0.5"
+codeonversion = "0.49"
 import time
 import os
 import sys
@@ -63,7 +63,7 @@ else:
         print("Welcome to the CodeOn command line! Type in the command 'help' for help.")
         time.sleep(1)
         clear_screen()
-        newcodeonversion = "0.5"
+        newcodeonversion = "0.49"
 
         def parse(program):
             tokens = program.split()
@@ -199,7 +199,8 @@ else:
                         create_folder(folder_path, folder_name)
                     elif program == "reload":
                         clear_screen()
-                        script_path = os.path.abspath(__file__)
+                        script_path2 = os.path.abspath(__file__)
+                        script_path = f'"{script_path2}"'
                         os.execv(sys.executable, ['python'] + [script_path])
                     elif program == "read":
                         current_script = Path(__file__).resolve()
