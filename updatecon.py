@@ -28,8 +28,8 @@ def main():
     print("Created guftemp folder.")
 
     files_to_create = [
-        ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/CodeOn%20for%20windows.py", "CodeOn for windows.py"),
-        ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/CodeOn%20for%20windows%20file%20runner.py", "CodeOn for windows file runner.py"),
+        ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/CodeOn.py", "CodeOn.py"),
+        ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/CodeOn%20file%20runner.py", "CodeOn file runner.py"),
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/updatecon.py", "updatecon.py"),
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/gnv.py", "gnv.py"),
         ("https://raw.githubusercontent.com/bruh1555/CodeOn/main/LICENSE", "LICENSE"),
