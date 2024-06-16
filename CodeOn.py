@@ -24,10 +24,11 @@ def getlatestversionfunc():
     
     for root, dirs, files in os.walk(parent_dir):
         if "updatecon.py" in files:
-            target_script_path = Path(root) / "updatecon.py"
+            target_script_path2 = Path(root) / "updatecon.py"
             break
     
-    if target_script_path:
+    if target_script_path2:
+        target_script_path = f'"{target_script_path2}"'
         os.system(f'python {target_script_path}')
         print("Welcome back! We are reloading CodeOn to receive the data retrieved from the updater.")
         script_path = os.path.abspath(__file__)
