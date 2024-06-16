@@ -34,6 +34,7 @@ def getlatestversionfunc():
         script_path2 = os.path.abspath(__file__)
         script_path = f'"{script_path2}"'
         os.execv(sys.executable, ['python'] + [script_path])
+        sys.exit()
     else:
         print("ACTION REQUIRED: THE FILE 'updatecon.py' CANNOT BE FOUND. PLEASE REDOWNLOAD CODEON TO FIX THIS ISSUE.")
         sys.exit()
