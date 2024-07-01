@@ -342,7 +342,7 @@ else:
                         os.system("python3")
                     elif "py" in program:
                         program2 = program[3:]
-                        os.system(f'python3 {program2}')
+                        os.system(f'python3 "{program2}"')
                     elif program == "2FA":
                         clear_screen()
                         print("Loading 2FA console...")
@@ -471,16 +471,16 @@ else:
                     elif program == "ncon":
                         script_path = os.path.abspath(__file__)
                         if os.name == 'nt':
-                            os.system(f'start cmd /K python {script_path}')
+                            os.system(f'start cmd /K python "{script_path}"')
                         else:
-                            os.system(f'gnome-terminal -- python {script_path}')
+                            os.system(f'gnome-terminal -- python "{script_path}"')
                     elif "cmdtitle" in program:
                         if os.name == 'nt':
                             program2 = program[9:]
                             set_console_title(f'{program2} - CodeOn')
                     elif program == "vmcon":
                         script_path = os.path.abspath(__file__)
-                        os.system(f'python {script_path}')
+                        os.system(f'python "{script_path}"')
                     elif program == "rstcon":
                         getlatestversionfunc()
                     else:
