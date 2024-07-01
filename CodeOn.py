@@ -88,7 +88,6 @@ else:
         install_package('pyotp')
         install_package('configparser')
         install_package('pathlib')
-        install_package('shutil')
         time.sleep(5)
         clear_screen()
         set_console_title('CodeOn Command Line')
