@@ -1,4 +1,3 @@
-import urllib
 import sys
 import requests
 import checkinternet
