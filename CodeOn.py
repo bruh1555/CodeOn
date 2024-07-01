@@ -19,6 +19,26 @@ def clear_screen():
     else:
         os.system('clear')
 
+def install_package(package_name):
+    try:
+        pip_version = os.system(f"{sys.executable} -m pip --version")
+        if pip_version != 0:
+            print("pip is not available. Please install pip first.")
+            return
+    except Exception as e:
+        print(f"Error checking pip version: {e}")
+        return
+    try:
+        print(f"Installing {package_name}...")
+        install_command = f"{sys.executable} -m pip install {package_name}"
+        result = os.system(install_command)
+        if result == 0:
+            print(f"{package_name} installed successfully.")
+        else:
+            print(f"Failed to install {package_name}. Exit code: {result}")
+    except Exception as e:
+        print(f"Error installing package {package_name}: {e}")
+
 def getlatestversionfunc():
     current_script = Path(__file__).resolve()
     parent_dir = current_script.parent
@@ -63,6 +83,14 @@ else:
         getlatestversionfunc()
     else:
         time.sleep(3)
+        print("Installing modules...")
+        install_package('requests')
+        install_package('pyotp')
+        install_package('configparser')
+        install_package('pathlib')
+        install_package('shutil')
+        time.sleep(5)
+        clear_screen()
         set_console_title('CodeOn Command Line')
         print("Welcome to the CodeOn command line! Type in the command 'help' for help.")
         time.sleep(1)
