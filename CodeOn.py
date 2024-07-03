@@ -1,14 +1,4 @@
 codeonversion = "0.5"
-import time
-import os
-import sys
-import ctypes
-import requests
-import pyotp
-import configparser
-from pathlib import Path
-import checkinternet
-import gnv as gnv
 
 def set_console_title(title):
     if os.name == 'nt':
@@ -96,12 +86,24 @@ else:
     else:
         time.sleep(3)
 def main2():
-    print("Installing modules...")
-    install_package('requests')
-    install_package('pyotp')
-    install_package('configparser')
-    install_package('pathlib')
-    time.sleep(5)
+    try:
+        import time
+        import os
+        import sys
+        import ctypes
+        import requests
+        import pyotp
+        import configparser
+        from pathlib import Path
+        import checkinternet
+        import gnv as gnv
+    except:
+        print("Installing modules...")
+        install_package('requests')
+        install_package('pyotp')
+        install_package('configparser')
+        install_package('pathlib')
+        time.sleep(5)
     clear_screen()
     set_console_title('CodeOn Command Line')
     print("Welcome to the CodeOn command line! Type in the command 'help' for help.")
