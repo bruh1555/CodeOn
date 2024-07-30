@@ -1,4 +1,8 @@
 codeonversion = "0.5"
+import time
+import os
+import sys
+import ctypes
 
 def set_console_title(title):
     if os.name == 'nt':
