@@ -91,10 +91,6 @@ else:
         time.sleep(3)
 def main2():
     try:
-        import time
-        import os
-        import sys
-        import ctypes
         import requests
         import pyotp
         import configparser
