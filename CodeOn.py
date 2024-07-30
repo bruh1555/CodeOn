@@ -3,6 +3,13 @@ import time
 import os
 import sys
 import ctypes
+try:
+    import gnv as gnv
+    import checkinternet
+except Exception as e:
+    print("CodeOn cannot continue.")
+    print(f"Error while importing CodeOn Modules: {e}")
+    exit()
 
 def set_console_title(title):
     if os.name == 'nt':
@@ -95,8 +102,6 @@ def main2():
         import pyotp
         import configparser
         from pathlib import Path
-        import checkinternet
-        import gnv as gnv
     except:
         print("Installing modules...")
         install_package('requests')
