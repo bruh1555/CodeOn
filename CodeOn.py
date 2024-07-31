@@ -3,6 +3,7 @@ import time
 import os
 import sys
 import ctypes
+import shutil
 try:
     import gnv as gnv
     import checkinternet
@@ -503,6 +504,76 @@ def main2():
                     os.system(f'python "{script_path}"')
                 elif program == "rstcon":
                     getlatestversionfunc()
+                elif program == "mdl":
+                    print("Welcome to the module command line!")
+                    print("Choose an option:")
+                    print("1. Download Official Module")
+                    print("2. Download UnOfficial Module")
+                    print("3. Remove a Module")
+                    print("4. Load a Module")
+                    print("5. Exit")
+                    option = input("Option: ")
+                    if option == "1":
+                        module = input("Module name: ")
+                        current_script = Path(__file__).resolve()
+                        parent_dir = current_script.parent
+                        modules_dir = parent_dir / "Modules"
+                        ModuleDir = modules_dir / module
+                        mainfilepath = ModuleDir / "main.py"
+                        os.makedirs(modules_dir, exist_ok=True)
+                        if os.path.exists(ModuleDir):
+                            shutil.rmtree(ModuleDir)
+                        os.makedirs(ModuleDir)
+                        url = f"https://raw.githubusercontent.com/bruh1555/CodeOnModules/main/{module}/main.py"
+                        response = requests.get(url)
+                        if response.status_code == 200:
+                            with open(mainfilepath, 'w') as mainfile:
+                                mainfile.write(response.text)
+                            print(f"Successfully installed module {module}.")
+                        else:
+                            print(f"Failed to get module {module}.")
+                            shutil.rmtree(ModuleDir)
+                    elif option == "2":
+                        print("This option isn't available yet.")
+                    elif option == "3":
+                        module = input("Module name: ")
+                        current_script = Path(__file__).resolve()
+                        parent_dir = current_script.parent
+                        modules_dir = parent_dir / "Modules"
+                        if os.path.exists(modules_dir):
+                            ModuleDir = modules_dir / module
+                            if os.path.exists(ModuleDir):
+                                shutil.rmtree(ModuleDir)
+                                print(f"Successfully removed module {module}.")
+                            else:
+                                print(f"Module {module} is not downloaded.")
+                        else:
+                            print("No modules are downloaded.")
+                    elif option == "4":
+                        module = input("Module name: ")
+                        current_script = Path(__file__).resolve()
+                        parent_dir = Path(current_script.parent).resolve()
+                        modules_dir = Path(parent_dir / "Modules").resolve()
+                        ModuleDir = Path(modules_dir / module).resolve()
+                        modulemainfile = Path(ModuleDir / "main.py").resolve()
+                        if os.path.exists(modules_dir):
+                            if os.path.exists(ModuleDir):
+                                if ModuleDir not in sys.path:
+                                    sys.path.insert(0, ModuleDir)
+                                if os.path.exists(modulemainfile):
+                                    print(f"{sys.executable} {modulemainfile}")
+                                    os.system(f'{sys.executable} "{modulemainfile}"')
+                                else:
+                                    print("The module does not include a main.py file. This is not your fault.")
+                            else:
+                                print(f"Module {module} is not installed.")
+                        else:
+                            print("No modules are installed.")
+                    elif option == "5":
+                        break
+                    else:
+                        print("Invalid option.")
+                        
                 else:
                     print("Traceback: Unknown Command")
                     
