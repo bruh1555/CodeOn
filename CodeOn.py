@@ -1,4 +1,4 @@
-codeonversion = "0.5"
+codeonversion = "0.6"
 import time
 import os
 import sys
@@ -115,7 +115,11 @@ def main2():
     print("Welcome to the CodeOn command line! Type in the command 'help' for help.")
     time.sleep(1)
     clear_screen()
-    newcodeonversion = "0.49"
+    newcodeonversion = "0.6"
+    import requests
+    import pyotp
+    import configparser
+    from pathlib import Path
 
     def parse(program):
         tokens = program.split()
