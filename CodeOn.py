@@ -260,6 +260,7 @@ def main2():
                     script_path = f'"{script_path2}"'
                     os.execv(sys.executable, ['python'] + [script_path])
                 elif program == "read":
+                    from pathlib import Path
                     current_script = Path(__file__).resolve()
                     parent_dir = current_script.parent
                     target_script_path = None
