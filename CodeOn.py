@@ -1,4 +1,4 @@
-codeonversion = "0.7.0"
+codeonversion = "0.8.0"
 codeonnew = True
 noupdate = False
 verboseoutput = False
