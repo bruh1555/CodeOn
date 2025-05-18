@@ -412,15 +412,14 @@ if "Error: " in latest_version:
         print("Continuing.")
         print("Ignore the module errors.")
 else:
-    latest_version = float(latest_version)
     if codeonversion == "testing":
         print("Continuing because you are in the testing environment...")
     elif noupdate == True:
         print("Continuing because you have disabled updates...")
-    elif not float(codeonversion) == latest_version:
+    elif not str(codeonversion.strip()) == str(latest_version.strip()): # are you actually serious? i had to use str? - bruh1555 5/18/2025
         print("You do not have the latest version.")
-        print(f'Version of current CodeOn: {codeonversion}')
-        print(f'Latest CodeOn Version: {latest_version}')
+        print(f'Version of current CodeOn: {repr(codeonversion)}')
+        print(f'Latest CodeOn Version: {repr(latest_version)}')
         print("Getting latest version...")
         getlatestversionfunc()
 
