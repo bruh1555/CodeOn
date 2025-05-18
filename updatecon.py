@@ -7,7 +7,7 @@ import sys
 def create_file_from_url(url, file_path):
     response = requests.get(url)
     if response.status_code == 200:
-        with open(file_path, "w") as file:
+        with open(file_path, "w", encoding="utf-8") as file:
             file.write(response.text)
         print(f"Finished writing {file_path}.")
     else:
